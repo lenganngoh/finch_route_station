@@ -92,6 +92,8 @@ class MainActivity : AppCompatActivity() {
                 null
             )
         }
+
+        imgStationOverlay.setOnClickListener {}
     }
 
     private fun initializeRetrofit() {
