@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/contDuplicate"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:visibility="gone">
+
+    <View
+        android:id="@+id/viewDimmer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.7"
+        android:background="@color/colorPrimary" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardDuplicate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_default_margin"
+        android:background="@android:color/white"
+        app:cardCornerRadius="@dimen/dimen_default_card_corner_radius">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgStationOverlay"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_default_card_image_max_height"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtNameOverlay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="@dimen/dimen_default_sub_header_text_size"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtAgencyOverlay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="@dimen/dimen_default_text_size" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_default_margin"
+                android:gravity="center"
+                android:text="@string/str_route_stops"
+                android:textSize="@dimen/dimen_default_header_text_size"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_default_margin"
+                android:gravity="center"
+                android:text="@string/str_click_on_an_item_to_see_details"
+                android:textSize="@dimen/dimen_default_text_size"
+                android:textStyle="italic" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvRoute"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:fadingEdgeLength="@dimen/dimen_default_fading_edge"
+                android:requiresFadingEdge="vertical|horizontal" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtEmptyState"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="@dimen/dimen_default_margin"
+                android:gravity="center"
+                android:text="@string/str_no_routes_available_at_the_moment"
+                android:textSize="@dimen/dimen_default_text_size"
+                android:textStyle="italic" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <com.balysv.materialripple.MaterialRippleLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iconClose"
+                android:layout_width="@dimen/dimen_default_square_icon_edge_size"
+                android:layout_height="@dimen/dimen_default_square_icon_edge_size"
+                android:layout_margin="@dimen/dimen_default_padding"
+                android:src="@drawable/icon_close"
+                android:tint="@android:color/white" />
+
+        </com.balysv.materialripple.MaterialRippleLayout>
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>
